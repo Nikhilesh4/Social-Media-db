@@ -1,59 +1,93 @@
-Command-1
-Gives the users from the USER table whose gender is Male.
+# Social Media Database Project
 
-Command-2
-Gives all the posts done by the user-id 7 from the POST table.
+This project is a relational database design for a social media platform. It includes the schema, data, and relationships required to manage users, posts, comments, groups, events, messages, and more. The database is implemented using MySQL and is designed to support various features commonly found in social media platforms.
 
-Command-3
-Gives the message info between the user-ids 9 and 10 
+## Features Implemented
 
-Command-4
-Gives all the users that are older than the given age 30.
+### 1. User Management
+- Users can register with details like email, username, birthdate, gender, and name.
+- Users can have multiple phone numbers.
+- Verified users are tracked with verification methods and timestamps.
 
-Command-5
-Gives the post that have the given visibility type i.e, private or public here given public.
+### 2. Posts and Comments
+- Users can create posts with visibility options (`Public`, `Friends-only`, `Private`).
+- Posts can have media links (images, videos, etc.).
+- Users can comment on posts and reply to comments.
 
-Command-6
-Gives all the replie-ids that are done by the given user-id.Here the user-id is 1.
+### 3. Reactions
+- Users can react to posts, comments, and replies with various reaction types (e.g., `Like`, `Love`, `Laughing`, etc.).
 
-Command-7
-Gives the number of comments done by a user where the user-id is provided.Here it is 4
+### 4. Messaging
+- Users can send direct messages to each other.
+- Messages have timestamps for when they were sent and seen.
 
-Command-8
-Gives the Average number of followers across all pages which is 1.83
+### 5. Groups
+- Users can create and join groups.
+- Groups have descriptions and timestamps for when they were created.
 
-Commmand-9
-Gives the Group names containing the word here we are giving Food as key word.
+### 6. Events
+- Users can create events with details like name, description, venue, city, country, start and end times.
+- Users can attend events.
 
-Command-10
-Gives the events that matches with the given event_name here the key_word is Conference
+### 7. Pages
+- Users can create and follow pages.
+- Pages have categories, descriptions, and timestamps for when they were created.
 
-Command-11
-Here we update the visbility of the post here we are updating the  post id 2 to Private.
+### 8. Friendships
+- Users can establish friendships with other users.
 
-Command-12
-Here for the given user-id we are updating the phone number to a +1-202-555-0182 
+## Queries That Can Be Processed
 
-Command-13
-Here we update the event start and end times for the given event-id=13 from start time=2024-11-29 10:30:01 to 2024-11-29 10:30:00 and end time 2024-11-29 17:00:01 to 2024-11-29 17:00:00.
+Here are some example queries that can be executed on this database:
 
-Command-14
-Here we are deleting a GROUP where the group_name is given by user.Here we gave Food Enthusiasts as the group_name.
+1. **Retrieve all posts by a specific user.**
+2. **Find all comments on a specific post.**
+3. **List all users attending a specific event.**
+4. **Get all groups a user is a member of.**
+5. **Fetch all messages sent between two users.**
+6. **Find all reactions to a specific post or comment.**
+7. **List all pages followed by a specific user.**
+8. **Retrieve all friends of a specific user.**
+9. **Get all events created by a specific user.**
+10. **Find all replies to a specific comment.**
 
-Command-15
-Here we are deleting the media_link that corresponds to the given post-id here it is 1.
+## How to Run
 
-Command-16
-Here we are inserting a new user given the email-id,username,birth-date,gender,firstname,middle name.(Values varun@g.com,vr,2024-11-29,Male,Sai,NULL,Varun)
+### Prerequisites
+- MySQL installed on your system.
+- A MySQL client or command-line access to execute SQL scripts.
 
-Command-17
-Here we are adding a reaction to a post/comment/reply to the givne user-id  here it is 1,Love,post,5
+### Steps
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Nikhilesh4/Social-Media-db.git
+   cd Social-Media-db
+   ```
 
-Command-18
-Analyse user age distribution in each group
+2. Open the `dumps.sql` file located in the project directory.
 
-Command-19
-Analyse the average response time for each gender
+3. Import the SQL dump into your MySQL database:
+   ```bash
+   mysql -u <username> -p <database_name> < dumps.sql
+   ```
 
-Command-20
-Analyze the average number of comments for all posts grouped by gender
+4. Verify the database schema and data by connecting to your MySQL instance:
+   ```bash
+   mysql -u <username> -p
+   USE <database_name>;
+   SHOW TABLES;
+   ```
+
+5. Execute queries to interact with the database.
+
+### Notes
+- Replace `<username>` and `<database_name>` with your MySQL username and the name of the database you want to use.
+- Ensure that foreign key constraints are enabled in your MySQL configuration.
+
+## Repository Structure
+- `dumps.sql`: Contains the SQL schema and data for the database.
+- `.git/`: Git configuration files for version control.
+- `README.md`: Documentation for the project.
+
+Feel free to explore and extend the database to add more features or optimize its performance!
+
